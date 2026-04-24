@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Emama Noor Portfolio Design System
+   All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Midnight Sage — dark theme */
+    --background: 165, 5%, 11%;          /* #0f1210 */
+    --foreground: 132 8% 92%;          /* #e8ede9 */
+    --foreground-muted: 132 6% 65%;    /* muted text */
+
+    --card: 132 9% 11%;                /* #1a1f1b */
+    --card-foreground: 132 8% 92%;
+
+    --popover: 132 9% 11%;
+    --popover-foreground: 132 8% 92%;
+
+    --primary: 108 16% 54%;            /* #7d9b76 sage */
+    --primary-foreground: 165, 5%, 11%;
+    --primary-glow: 108 25% 70%;
+
+    --secondary: 50 80% 80%;           /* #f5e6a3 soft yellow */
+    --secondary-foreground: 165, 5%, 11%;
+    --secondary-soft: 132 9% 14%;      /* dark tag bg */
+
+    --muted: 132 9% 14%;
+    --muted-foreground: 132 6% 65%;
+
+    --accent: 108 16% 54%;
+    --accent-foreground: 165, 5%, 11%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 132 8% 92%;
+
+    --border: 132 8% 18%;
+    --input: 132 8% 18%;
+    --ring: 108 16% 54%;
+
+    --radius: 1rem;
+
+    /* Typography */
+    --font-display: 'Inter', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    /* Effects */
+    --shadow-soft: 0 10px 30px -15px hsl(108 16% 30% / 0.15);
+    --shadow-lift: 0 20px 40px -20px hsl(108 16% 30% / 0.25);
+    --shadow-glow: 0 0 80px hsl(50 80% 80% / 0.4);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 165, 5%, 11%;
+    --sidebar-foreground: 132 8% 92%;
+    --sidebar-primary: 108 16% 54%;
+    --sidebar-primary-foreground: 165, 5%, 11%;
+    --sidebar-accent: 132 9% 11%;
+    --sidebar-accent-foreground: 132 8% 92%;
+    --sidebar-border: 132 8% 18%;
+    --sidebar-ring: 108 16% 54%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-family: var(--font-body);
+    background-image: 
+      radial-gradient(circle at 1px 1px, hsl(132 8% 92% / 0.04) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .font-display { font-family: var(--font-display); }
+  .font-body { font-family: var(--font-body); }
+  .font-mono { font-family: var(--font-mono); }
+
+  .nav-link {
+    @apply text-foreground/80 transition-colors duration-200 hover:text-primary;
+  }
+
+  .section-heading {
+    @apply flex items-center gap-4 mb-10 font-display text-3xl md:text-4xl font-bold text-foreground;
+  }
+  .section-heading::after {
+    content: '';
+    @apply h-px bg-primary/40 flex-1 max-w-[200px];
+  }
+
+  .tech-pill {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-mono text-primary;
+    background-color: hsl(var(--secondary-soft));
+  }
+
+  .blink-cursor::after {
+    content: '|';
+    @apply text-primary ml-1;
+    animation: blink 1s step-end infinite;
+  }
+}
+
+@layer utilities {
+  .container-narrow {
+    @apply max-w-5xl mx-auto px-6 md:px-10;
+  }
+  .text-muted {
+    color: hsl(var(--foreground-muted));
+  }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-lift { box-shadow: var(--shadow-lift); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .transition-smooth { transition: var(--transition-smooth); }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes stroke-slide {
+  0% { transform: translateX(-110%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes spine-fade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes glow-in {
+  0% { opacity: 0; }
+  40% { opacity: 0; }
+  70% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes loader-fade {
+  0% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
