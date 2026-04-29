@@ -53,10 +53,35 @@ export const Navbar = () => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
-          className="font-display text-2xl md:text-4xl font-bold text-primary tracking-tight hover:opacity-80 transition-opacity"
+          className="inline-flex items-center justify-center transition-transform duration-300 hover:-translate-y-[2px]"
           aria-label="Home"
         >
-          E
+          <svg
+            viewBox="0 0 100 100"
+            className="w-10 h-10 md:w-12 md:h-12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {/* Hexagon outline */}
+            <path
+              d="M50 6 L88 28 L88 72 L50 94 L12 72 L12 28 L50 6"
+              stroke="hsl(var(--primary))"
+              strokeWidth="6"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              fill="none"
+            />
+
+            {/* E */}
+            <path
+              d="M40 32 V68 M40 32 H62 M40 50 H58 M40 68 H62"
+              stroke="hsl(var(--primary))"
+              strokeWidth="6"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              fill="none"
+            />
+          </svg>
         </a>
 
         {/* Desktop Links */}

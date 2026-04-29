@@ -27,9 +27,7 @@ export const Contact = () => {
 
         <Reveal delay={200}>
           <p className="text-sm md:text-base text-muted leading-relaxed mb-10">
-            I'm always open to new opportunities and collaborations. Whether you
-            have a project in mind, a role to fill, or just want to connect — my
-            inbox is always open!
+            I’m always open to new opportunities in building scalable systems. Whether you're hiring, building something that needs well-designed and reliable systems, or just want to connect, feel free to reach out!
           </p>
         </Reveal>
 
