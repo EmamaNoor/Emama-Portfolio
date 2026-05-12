@@ -33,11 +33,9 @@ export const Contact = () => {
 
         <Reveal delay={300}>
           <a
-            href="mailto:emamanoor7@gmail.com?subject=Let's Connect&body=Hi Emama,%0D%0A%0D%0AI’d like to connect with you."
-            onClick={() => {
-              navigator.clipboard.writeText("emamanoor7@gmail.com");
-              alert("Email copied to clipboard!");
-            }}
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=emamanoor7@gmail.com&su=Let's%20Connect&body=Hi%20Emama,"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block px-6 py-3 md:px-8 md:py-4 rounded-md bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-smooth shadow-soft hover:shadow-lift hover:-translate-y-0.5"
           >
             Say Hello

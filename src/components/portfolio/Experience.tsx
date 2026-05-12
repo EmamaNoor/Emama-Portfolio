@@ -4,14 +4,25 @@ import { cn } from "@/lib/utils";
 
 const jobs = [
   {
+    company: "Frack Technologies",
+    role: "Frontend Developer",
+    period: "Jul 2025 – Dec 2025",
+    bullets: [
+      "Developed scalable full-stack features for a Dubai-based aviation marketplace platform supporting online buying, selling, and auction workflows.",
+      "Built reusable React component systems across core product flows to improve development efficiency and UI consistency.",
+      "Optimized frontend performance and API-driven rendering workflows for smoother user interactions.",
+      "Collaborated cross-functionally to deliver production-ready features aligned with business and operational requirements.",
+    ],
+  },
+  {
     company: "DijitalBrains",
     role: "Frontend Developer Intern",
     period: "Jul 2024 – Aug 2024",
     bullets: [
-      "Built and shipped responsive web interfaces using React and Tailwind CSS for client-facing products.",
-      "Integrated REST APIs to connect frontend components with backend services and render dynamic data.",
-      "Collaborated with design and backend teams to deliver clean, pixel-accurate UI across multiple projects.",
-      "Deployed production-ready applications on Vercel with continuous deployment via Git.",
+      "Worked in a client-facing full-stack team engineering web applications for US-based clients.",
+      "Developed responsive user interfaces using React and Tailwind CSS across multiple client projects.",
+      "Integrated REST APIs and dynamic frontend workflows to support scalable and maintainable applications.",
+      "Collaborated with design and backend teams to deliver clean, production-ready user experiences.",
     ],
   },
 ];

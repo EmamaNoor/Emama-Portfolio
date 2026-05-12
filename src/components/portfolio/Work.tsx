@@ -13,22 +13,36 @@ const featured = [
     github: "https://github.com/Haroon-12/Splash",
   },
   {
-    name: "E2E Secure Messenger",
+    name: "Codely",
     description:
-      "Built an end-to-end encrypted messaging system using AES-256-GCM for client-side encryption and RSA-2048 for secure key exchange. Implemented a custom ECDH key exchange with RSA-PSS signatures and HKDF to prevent man-in-the-middle attacks, along with replay protection using nonces and sequence numbers.",
-    stack: ["React.js", "Node.js", "Web Crypto API", "Socket.io", "MongoDB"],
-    image: "/e2e-frontpage.png",
-    github: "https://github.com/Haroon-12/E2EMessaging",
+      "A browser-based coding interview simulator built with Next.js, WebSockets, and Claude. It generates LeetCode-style problems on demand, watches you code in a Monaco editor, and delivers real-time hints when you're stuck without spoiling the solution. Submit your code and it evaluates your correctness, and gives you specific feedback on what to fix and how to improve.",
+    stack: ["Next.js", "Socket.io", "Monaco Editor", "Anthropic API", "TypeScript"],
+    image: "/ai-interviewer.png",
+    github: "https://github.com/EmamaNoor/AI-Code-Interviewer",
   },
 ];
 
 const others = [
-  { name: "Realtime Chat", desc: "Encrypted messaging app with presence and typing indicators.", stack: ["Next.js", "Supabase", "Tailwind"] },
-  { name: "AI Resume Parser", desc: "Pipeline that extracts and scores resumes against job descriptions.", stack: ["Python", "FastAPI", "spaCy"] },
-  { name: "Markdown Notes", desc: "Minimal local-first notes app with full-text search.", stack: ["React", "IndexedDB"] },
-  { name: "Crypto Tracker", desc: "Live dashboard tracking portfolio performance and alerts.", stack: ["Next.js", "Recharts"] },
-  { name: "Habit Loop", desc: "Tiny habit tracker with streaks and weekly retros.", stack: ["React Native", "Expo"] },
-  { name: "DevBoard", desc: "A developer-focused kanban with GitHub issue sync.", stack: ["Next.js", "tRPC", "Prisma"] },
+  {
+    name: "CafeCampus ERP",
+    desc: "Full-stack cafe management ERP with role-based portals, online payments, inventory management, and real-time order tracking.",
+    stack: ["React.js", "Node.js", "Express", "MongoDB", "Stripe"],
+    github: "https://github.com/EmamaNoor/CafeCampus",
+  },
+
+  {
+    name: "Messenger",
+    desc: "End-to-end encrypted messaging platform with hybrid cryptography, secure file sharing, and replay attack protection.",
+    stack: ["React.js", "Node.js", "Web Crypto API", "Socket.io", "MongoDB"],
+    github: "https://github.com/Haroon-12/E2EMessaging",
+  },
+
+  {
+    name: "Vault",
+    desc: "Budget and expense tracking application with transaction history, financial planning, smart alerts, and visual analytics dashboards.",
+    stack: ["React", "TypeScript", "Vite", "Recharts", "LocalStorage"],
+    github: "https://github.com/EmamaNoor/Budget-Tracker",
+  },
 ];
 
 export const Work = () => {
@@ -62,7 +76,12 @@ export const Work = () => {
                   <img
                     src={p.image}
                     alt={p.name}
-                    className="w-full h-56 sm:h-72 md:h-96 object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    className={cn(
+                      "grayscale group-hover:grayscale-0 transition-all duration-500 bg-black",
+                      p.name === "Codely"
+                        ? "w-full h-auto object-contain"
+                        : "w-full h-56 sm:h-72 md:h-96 object-cover"
+                    )}
                   />
                 </a>
 
@@ -87,10 +106,11 @@ export const Work = () => {
 
                   <div
                     className={cn(
-                      "flex flex-wrap gap-x-4 gap-y-2 mt-4 font-mono text-xs text-muted",
+                      "flex flex-wrap gap-x-4 gap-y-2 mt-4 font-mono text-xs text-muted leading-relaxed",
+                      p.name === "Codely" && "max-w-[320px]",
                       reverse
                         ? "md:ml-6"
-                        : "md:justify-end md:-mr-[12px]"
+                        : "md:justify-end md:ml-auto"
                     )}
                   >
                     {p.stack.map((s) => (
@@ -125,19 +145,25 @@ export const Work = () => {
         <h3 className="font-display text-2xl md:text-3xl text-center text-foreground mb-3">
           Other Noteworthy Projects
         </h3>
-        <p className="font-mono text-sm text-primary text-center mb-10 md:mb-12">
+        {/* <p className="font-mono text-sm text-primary text-center mb-10 md:mb-12">
           view the archive
-        </p>
+        </p> */}
       </Reveal>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 mt-10 md:mt-14">
         {visible.map((p, i) => (
           <Reveal key={p.name} delay={i * 80}>
             <div className="group h-full bg-card rounded-2xl p-5 md:p-6 shadow-soft hover:shadow-lift md:hover:-translate-y-2 transition-smooth flex flex-col">
               <div className="flex items-start justify-between mb-6">
                 <Folder className="text-primary" size={34} />
                 <div className="flex gap-3 text-foreground">
-                  <a href="#" aria-label="GitHub" className="hover:text-primary transition-colors">
+                  <a
+                    href={p.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`${p.name} GitHub`}
+                    className="hover:text-primary transition-colors"
+                  >
                     <Github size={18} />
                   </a>
                 </div>
