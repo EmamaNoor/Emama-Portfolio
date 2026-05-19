@@ -4,7 +4,7 @@ export const Footer = () => {
   return (
     <footer className="py-8 md:py-10 border-t border-border/60">
       <div className="container-narrow flex flex-col items-center gap-4 px-4">
-        
+
         <div className="flex gap-6 text-muted text-base md:text-sm">
           <a
             href="https://github.com/EmamaNoor"

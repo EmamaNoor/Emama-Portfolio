@@ -15,8 +15,8 @@ const featured = [
   {
     name: "Codely",
     description:
-      "A browser-based coding interview simulator built with Next.js, WebSockets, and Claude. It generates LeetCode-style problems on demand, watches you code in a Monaco editor, and delivers real-time hints when you're stuck without spoiling the solution. Submit your code and it evaluates your correctness, and gives you specific feedback on what to fix and how to improve.",
-    stack: ["Next.js", "Socket.io", "Monaco Editor", "Anthropic API", "TypeScript"],
+      "A browser-based interview simulator built with Next.js and Groq. It generates coding problems, watches you code in Monaco, drops hints when you're stuck, and scores your solution with specific feedback on what to fix.",
+    stack: ["Next.js", "Route Handlers", "Groq", "TypeScript", "Monaco Editor"],
     image: "/ai-interviewer.png",
     github: "https://github.com/EmamaNoor/AI-Code-Interviewer",
   },

@@ -1,16 +1,14 @@
 import { Reveal } from "./Reveal";
 
 const technologies = [
-  "TypeScript",
-  "JavaScript",
   "Python",
-  "C++",
-  "React",
-  "Next.js",
+  "n8n",
+  "LangChain",
+  "LangGraph",
+  "RAG",
+  "TypeScript",
   "FastAPI",
-  "Node.js",
   "AWS",
-  "Docker",
 ];
 
 export const About = () => {
@@ -27,37 +25,23 @@ export const About = () => {
         <div className="md:col-span-3 space-y-5 text-muted leading-relaxed text-sm md:text-base">
           <Reveal delay={100}>
             <p>
-              Hello! I'm Emama, a developer who loves turning ambiguous problems
-              into elegant, working software. My journey into code started with a
-              curiosity about how the apps I used every day actually worked, and
-              that curiosity hasn't faded since.
+              It started at a school hackathon where my team had 24 hours and a beat-up Arduino kit. We were trying to build a system that tracked campus energy usage across classrooms and flagged waste automatically. It barely worked by the final demo, but seeing code make a real-world decision, even a clunky one, was enough to pull me in completely. 
             </p>
           </Reveal>
 
           <Reveal delay={200}>
             <p>
-              Today I focus on building full-stack products end-to-end, from
-              shaping the data model and APIs, to crafting interfaces that feel
-              effortless. I care deeply about details, performance, and the small
-              touches that make a product feel{" "}
-              <span className="text-primary font-medium">considered</span>.
+              Today I build workflow automation and agentic AI systems, connecting LLMs, APIs, and data pipelines to replace repetitive decision-making at scale, from early-stage MVPs to integrations that bring disconnected platforms into a single automated workflow.
             </p>
           </Reveal>
 
           <Reveal delay={300}>
-            <p>
-              When I'm not coding, you'll find me exploring new design systems,
-              learning about distributed systems, or sketching out the next idea.
-            </p>
-          </Reveal>
-
-          <Reveal delay={400}>
             <p className="pt-4">
               Here are a few technologies I've been working with recently:
             </p>
           </Reveal>
 
-          <Reveal delay={500}>
+          <Reveal delay={400}>
             <ul className="grid grid-cols-2 gap-x-6 gap-y-2 font-mono text-sm pt-2">
               {technologies.map((t) => (
                 <li key={t} className="flex items-center gap-2 text-muted">

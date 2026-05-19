@@ -21,10 +21,10 @@ export const Hero = () => {
             Emama Noor.
           </h1>,
           <h2 key="3" className="font-display text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-semibold text-primary leading-tight mb-5 md:mb-6">
-            I turn ideas into products.
+            I build intelligent systems.
           </h2>,
           <p key="4" className="text-muted text-sm md:text-lg max-w-2xl leading-relaxed mb-8 md:mb-10">
-            I'm a full-stack developer specializing in crafting scalable, end-to-end digital products. I build clean, functional applications that are as solid under the hood as they look on the surface.
+            I'm an AI engineer specializing in workflow automation, LLM integrations, and agentic systems. I build intelligent, scalable solutions that eliminate repetitive decision-making and optimize operations at scale.
           </p>,
           <a
             key="5"
