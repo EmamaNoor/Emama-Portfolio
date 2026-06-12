@@ -7,7 +7,7 @@ const featured = [
   {
     name: "LaunchMind",
     description:
-      "An autonomous software generator that orchestrates a 5-agent pipeline to reduce idea-to-delivery time to under 90 seconds. Features an Engineer Agent with automated GitHub commits, a self-correcting QA Agent that cuts revision cycles by 40%, and a high-availability architecture deployed on Vercel and Render.",
+      "A multi-agent system autonomously launching a micro-startup from a plain-text idea. Spans content generation, landing page development, social media copy and automated GitHub commits with self-correcting QA loops.",
     stack: ["Python", "GitHub API", "Slack API", "Prompt Engineering", "Render", "Vercel"],
     image: "/launchmind.png",
     github: "https://github.com/EmamaNoor/LaunchMind",
@@ -98,14 +98,17 @@ export const Work = () => {
                     {p.name}
                   </h3>
 
-                  <div className="w-full md:max-w-[25rem] bg-black/85 backdrop-blur-sm border border-white/10 text-white p-5 md:p-7 shadow-2xl leading-relaxed text-sm md:text-base">
+                  <div className={cn(
+                    "w-full md:max-w-[25rem] bg-black/85 backdrop-blur-sm border border-white/10 text-white p-5 md:p-7 shadow-2xl leading-relaxed text-sm md:text-base",
+                    !reverse && "md:ml-auto"
+                  )}>
                     {p.description}
                   </div>
 
                   <div
                     className={cn(
                       "flex flex-wrap gap-x-4 gap-y-2 mt-4 font-mono text-xs text-muted leading-relaxed",
-                      p.name === "Codely" && "max-w-[320px]",
+                      (p.name === "Codely" || p.name === "LaunchMind") && "max-w-[320px]",
                       reverse
                         ? "md:ml-6"
                         : "md:justify-end md:ml-auto"
