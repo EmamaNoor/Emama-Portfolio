@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Folder, Github } from "lucide-react";
+import { Folder, Github, ExternalLink } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { cn } from "@/lib/utils";
 
@@ -135,24 +135,6 @@ export const Work = () => {
                     ))}
                   </div>
 
-                  {p.extraLink && (
-                    <div
-                      className={cn(
-                        "mt-3",
-                        reverse ? "text-left" : "text-right"
-                      )}
-                    >
-                      <a
-                        href={p.extraLink.url}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-1 font-mono text-xs text-primary hover:underline"
-                      >
-                        {p.extraLink.label}
-                      </a>
-                    </div>
-                  )}
-
                   <div
                     className={cn(
                       "flex gap-4 mt-4 text-foreground",
@@ -168,6 +150,17 @@ export const Work = () => {
                     >
                       <Github size={20} />
                     </a>
+                    {p.extraLink && (
+                      <a
+                        href={p.extraLink.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={p.extraLink.label}
+                        className="hover:text-primary transition-colors"
+                      >
+                        <ExternalLink size={20} />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
