@@ -5,13 +5,11 @@ import { cn } from "@/lib/utils";
 const jobs = [
   {
     company: "Frack Technologies",
-    role: "Frontend Developer",
-    period: "Jul 2025 – Dec 2025",
+    role: "Automation Engineer",
+    period: "Jun 2025 – Dec 2025",
     bullets: [
-      "Developed scalable full-stack features for a Dubai-based aviation marketplace platform supporting online buying, selling, and auction workflows.",
-      "Built reusable React component systems across core product flows to improve development efficiency and UI consistency.",
-      "Optimized frontend performance and API-driven rendering workflows for smoother user interactions.",
-      "Collaborated cross-functionally to deliver production-ready features aligned with business and operational requirements.",
+      "Automated a lead generation pipeline that sourced 60+ clients for brand development services.",
+      "Collaborated on building an aviation marketplace enabling Transworld Aviation to buy, sell and auction parts online.",
     ],
   },
   {

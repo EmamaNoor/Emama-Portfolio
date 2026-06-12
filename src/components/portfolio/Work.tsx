@@ -5,12 +5,12 @@ import { cn } from "@/lib/utils";
 
 const featured = [
   {
-    name: "Splash",
+    name: "LaunchMind",
     description:
-      "An influencer marketing platform with role-based portals for brands, influencers and admins. Includes an AI recommendation engine using MiniLM embeddings + cosine similarity, AES-256-GCM encrypted in-app messaging, affiliate click analytics, and Stripe billing.",
-    stack: ["Next.js", "Drizzle ORM", "Xenova", "Stripe", "SQLite"],
-    image: "/splash-frontpage.png",
-    github: "https://github.com/Haroon-12/Splash",
+      "An autonomous software generator that orchestrates a 5-agent pipeline to reduce idea-to-delivery time to under 90 seconds. Features an Engineer Agent with automated GitHub commits, a self-correcting QA Agent that cuts revision cycles by 40%, and a high-availability architecture deployed on Vercel and Render.",
+    stack: ["Python", "GitHub API", "Slack API", "Prompt Engineering", "Render", "Vercel"],
+    image: "/launchmind.png",
+    github: "https://github.com/EmamaNoor/LaunchMind",
   },
   {
     name: "Codely",
@@ -24,24 +24,22 @@ const featured = [
 
 const others = [
   {
-    name: "CafeCampus ERP",
-    desc: "Full-stack cafe management ERP with role-based portals, online payments, inventory management, and real-time order tracking.",
-    stack: ["React.js", "Node.js", "Express", "MongoDB", "Stripe"],
-    github: "https://github.com/EmamaNoor/CafeCampus",
+    name: "MondAI",
+    desc: "An AI-driven workflow automation for Monday.com using natural language commands. Enables conversational task execution with automated item creation, updates and status queries through memory-buffered context.",
+    stack: ["n8n", "MCP", "Prompt Engineering"],
   },
 
   {
-    name: "Messenger",
-    desc: "End-to-end encrypted messaging platform with hybrid cryptography, secure file sharing, and replay attack protection.",
-    stack: ["React.js", "Node.js", "Web Crypto API", "Socket.io", "MongoDB"],
-    github: "https://github.com/Haroon-12/E2EMessaging",
+    name: "StaffSync",
+    desc: "An HR automation suite integrating Slack for attendance and payroll management. Features timezone-aware natural language check-ins, automated checkout workflows and personalized salary slip delivery via private DMs.",
+    stack: ["n8n", "Slack", "Workflow Automation"],
   },
 
   {
-    name: "Vault",
-    desc: "Budget and expense tracking application with transaction history, financial planning, smart alerts, and visual analytics dashboards.",
-    stack: ["React", "TypeScript", "Vite", "Recharts", "LocalStorage"],
-    github: "https://github.com/EmamaNoor/Budget-Tracker",
+    name: "Splash",
+    desc: "An influencer marketing platform with role-based portals for brands, influencers and admins. Includes an AI recommendation engine using MiniLM embeddings + cosine similarity, AES-256-GCM encrypted in-app messaging, affiliate click analytics, and Stripe billing.",
+    stack: ["Next.js", "Drizzle ORM", "Xenova", "Stripe", "SQLite"],
+    github: "https://github.com/Haroon-12/Splash",
   },
 ];
 
@@ -156,17 +154,19 @@ export const Work = () => {
             <div className="group h-full bg-card rounded-2xl p-5 md:p-6 shadow-soft hover:shadow-lift md:hover:-translate-y-2 transition-smooth flex flex-col">
               <div className="flex items-start justify-between mb-6">
                 <Folder className="text-primary" size={34} />
-                <div className="flex gap-3 text-foreground">
-                  <a
-                    href={p.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`${p.name} GitHub`}
-                    className="hover:text-primary transition-colors"
-                  >
-                    <Github size={18} />
-                  </a>
-                </div>
+                {p.github && (
+                  <div className="flex gap-3 text-foreground">
+                    <a
+                      href={p.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`${p.name} GitHub`}
+                      className="hover:text-primary transition-colors"
+                    >
+                      <Github size={18} />
+                    </a>
+                  </div>
+                )}
               </div>
 
               <h4 className="font-display text-lg md:text-xl font-semibold text-foreground group-hover:text-primary transition-colors mb-2">

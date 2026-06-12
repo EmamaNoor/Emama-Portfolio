@@ -101,7 +101,7 @@ export const Navbar = () => {
           ))}
 
           <a
-            href="/resume.pdf"
+            href="/Automation_EmamaNoor.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="px-4 py-2 rounded-md border border-primary text-primary text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
@@ -143,7 +143,7 @@ export const Navbar = () => {
           ))}
 
           <a
-            href="/resume.pdf"
+            href="/Automation_EmamaNoor.pdf"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setOpen(false)}
