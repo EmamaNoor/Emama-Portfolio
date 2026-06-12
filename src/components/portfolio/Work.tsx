@@ -3,7 +3,27 @@ import { Folder, Github } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { cn } from "@/lib/utils";
 
-const featured = [
+interface FeaturedProject {
+  name: string;
+  description: string;
+  stack: string[];
+  image: string;
+  github: string;
+  extraLink?: {
+    label: string;
+    url: string;
+  };
+}
+
+const featured: FeaturedProject[] = [
+  {
+    name: "Codely",
+    description:
+      "A browser-based interview simulator built with Next.js and Groq. It generates coding problems, watches you code in Monaco, drops hints when you're stuck, and scores your solution with specific feedback on what to fix.",
+    stack: ["Next.js", "Route Handlers", "Groq", "TypeScript", "Monaco Editor", "Vercel"],
+    image: "/ai-interviewer.png",
+    github: "https://github.com/EmamaNoor/AI-Code-Interviewer",
+  },
   {
     name: "LaunchMind",
     description:
@@ -11,14 +31,10 @@ const featured = [
     stack: ["Python", "GitHub API", "Slack API", "Prompt Engineering", "Render", "Vercel"],
     image: "/launchmind.png",
     github: "https://github.com/EmamaNoor/LaunchMind",
-  },
-  {
-    name: "Codely",
-    description:
-      "A browser-based interview simulator built with Next.js and Groq. It generates coding problems, watches you code in Monaco, drops hints when you're stuck, and scores your solution with specific feedback on what to fix.",
-    stack: ["Next.js", "Route Handlers", "Groq", "TypeScript", "Monaco Editor"],
-    image: "/ai-interviewer.png",
-    github: "https://github.com/EmamaNoor/AI-Code-Interviewer",
+    extraLink: {
+      label: "Generated Pages ↗",
+      url: "https://github.com/EmamaNoor/LaunchMind-LandingPages",
+    },
   },
 ];
 
@@ -76,7 +92,7 @@ export const Work = () => {
                     alt={p.name}
                     className={cn(
                       "grayscale group-hover:grayscale-0 transition-all duration-500 bg-black",
-                      p.name === "Codely"
+                      (p.name === "Codely" || p.name === "LaunchMind")
                         ? "w-full h-auto object-contain"
                         : "w-full h-56 sm:h-72 md:h-96 object-cover"
                     )}
@@ -118,6 +134,24 @@ export const Work = () => {
                       <span key={s}>{s}</span>
                     ))}
                   </div>
+
+                  {p.extraLink && (
+                    <div
+                      className={cn(
+                        "mt-3",
+                        reverse ? "text-left" : "text-right"
+                      )}
+                    >
+                      <a
+                        href={p.extraLink.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1 font-mono text-xs text-primary hover:underline"
+                      >
+                        {p.extraLink.label}
+                      </a>
+                    </div>
+                  )}
 
                   <div
                     className={cn(
