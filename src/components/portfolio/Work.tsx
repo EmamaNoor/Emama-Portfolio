@@ -38,7 +38,7 @@ const others = [
   {
     name: "Splash",
     desc: "An influencer marketing platform with role-based portals for brands, influencers and admins. Includes an AI recommendation engine using MiniLM embeddings + cosine similarity, AES-256-GCM encrypted in-app messaging, affiliate click analytics, and Stripe billing.",
-    stack: ["Next.js", "Drizzle ORM", "Xenova", "Stripe", "SQLite"],
+    stack: ["Next.js", "Drizzle ORM", "Stripe", "SQLite"],
     github: "https://github.com/Haroon-12/Splash",
   },
 ];
@@ -110,7 +110,7 @@ export const Work = () => {
                       "flex flex-wrap gap-x-4 gap-y-2 mt-4 font-mono text-xs text-muted leading-relaxed",
                       (p.name === "Codely" || p.name === "LaunchMind") && "max-w-[320px]",
                       reverse
-                        ? "md:ml-6"
+                        ? "md:ml-0"
                         : "md:justify-end md:ml-auto"
                     )}
                   >
